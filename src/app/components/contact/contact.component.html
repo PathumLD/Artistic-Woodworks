@@ -1,0 +1,99 @@
+<!-- contact.component.html -->
+<div class="bg-gray-50 min-h-screen">
+  <!-- <div class="relative h-64 md:h-96 overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1501959915551-4e8d30928317?q=80&auto=format&fit=crop" alt="Contact" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <h1 class="text-5xl font-bold text-white">Contact Us</h1>
+    </div>
+  </div> -->
+
+  <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-lg shadow-xl p-8">
+        <h2 class="text-3xl font-bold text-stone-800 mb-6 relative">
+          Get In Touch
+          <span class="absolute bottom-0 left-0 w-16 h-1 bg-blue-500"></span>
+        </h2>
+        <p class="text-blue-600 mb-8">
+          Have a question about commissioning a piece or want to discuss your project? Fill out the form below and we'll get back to you within 24 hours.
+        </p>
+
+        <form class="space-y-6" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="space-y-2">
+            <label for="name" class="block text-stone-800 font-medium">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+              placeholder="Your name">
+            <div *ngIf="submitted && contactForm.get('name')?.errors" class="text-red-500 text-sm mt-1">
+              <div *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</div>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="email" class="block text-stone-800 font-medium">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+              placeholder="your.email@example.com">
+            <div *ngIf="submitted && contactForm.get('email')?.errors" class="text-red-500 text-sm mt-1">
+              <div *ngIf="contactForm.get('email')?.errors?.['required'] ?? false">Email is required</div>
+              <div *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email</div>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="phone" class="block text-stone-800 font-medium">Phone Number</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              formControlName="phone"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+              placeholder="(123) 456-7890">
+          </div>
+
+          <div class="space-y-2">
+            <label for="projectType" class="block text-stone-800 font-medium">Project Type</label>
+            <select 
+              id="projectType" 
+              formControlName="projectType"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+              <option value="" disabled>Select project type</option>
+              <option value="residential">Residential Sculpture</option>
+              <option value="public">Public Installation</option>
+              <option value="corporate">Corporate Artwork</option>
+              <option value="other">Other</option>
+            </select>
+            <div *ngIf="submitted && contactForm.get('projectType')?.errors" class="text-red-500 text-sm mt-1">
+              <div *ngIf="submitted && contactForm.get('projectType')?.errors?.['required']">Please select a project type</div>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="message" class="block text-stone-800 font-medium">Your Message</label>
+            <textarea 
+              id="message" 
+              rows="6"
+              formControlName="message" 
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+              placeholder="Tell us about your project or inquiry..."></textarea>
+            <div *ngIf="submitted && contactForm.get('message')?.errors" class="text-red-500 text-sm mt-1">
+              <div *ngIf="contactForm.get('message')?.errors?.['required'] ?? false">Message is required</div>
+            </div>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            [disabled]="loading">
+            <span>{{ loading ? 'Sending...' : 'Send Message' }}</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

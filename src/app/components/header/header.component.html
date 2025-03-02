@@ -1,0 +1,53 @@
+<header class="sticky top-0 z-50 flex justify-between items-center mx-4 p-3 rounded-b-xl bg-white shadow-xl transition-all duration-300">
+  <div class="flex items-center gap-2 ">
+    <!-- <img src="../../../assets/Man.png" alt="Logo" class="w-10 h-10 rounded-full object-cover"> -->
+    <div class="text-stone-800 text-3xl font-bold tracking-wide relative group">
+      Artistic <span class="text-blue-500 text-3xl font-bold tracking-wide relative group"> Woodworks</span>
+      <div class="absolute -bottom-1 left-0 w-full h-1 "></div>
+    </div>
+  </div>
+  
+  <nav class="space-x-8">
+    <a [routerLink]="['/']" routerLinkActive="text-blue-500 font-semibold" [routerLinkActiveOptions]="{exact: true}" class="relative inline-block text-stone-700 text-lg font-medium transition-colors duration-300 hover:text-blue-600 group">
+      Home
+      <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100 routerLinkActive:scale-x-100"></span>
+    </a>
+    <a [routerLink]="['/about']" routerLinkActive="text-blue-500 font-semibold" class="relative inline-block text-stone-700 text-lg font-medium transition-colors duration-300 hover:text-blue-600 group">
+      About Us
+      <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100 routerLinkActive:scale-x-100"></span>
+    </a>
+    <a [routerLink]="['/gallery']" routerLinkActive="text-blue-500 font-semibold" class="relative inline-block text-stone-700 text-lg font-medium transition-colors duration-300 hover:text-blue-600 group">
+      Gallery
+      <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100 routerLinkActive:scale-x-100"></span>
+    </a>
+    <a [routerLink]="['/contact']" routerLinkActive="text-blue-500 font-semibold" class="relative inline-block text-stone-700 text-lg font-medium transition-colors duration-300 hover:text-blue-600 group">
+      Contact
+      <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100 routerLinkActive:scale-x-100"></span>
+    </a>
+  </nav>
+</header>
+
+<!-- Style for routerLinkActive can be placed in a global styles file or component styles -->
+<style>
+  /* These styles will be applied automatically by Angular when using routerLinkActive */
+  :host ::ng-deep .router-link-active span {
+    transform: scaleX(1);
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+</style>

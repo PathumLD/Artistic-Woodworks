@@ -1,0 +1,38 @@
+
+<!-- Hero Content -->
+<div class="relative h-[calc(100vh-60px)] flex items-center justify-center bg-gray-50 text-white overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://png.pngtree.com/background/20230716/original/pngtree-chinese-inspired-living-room-with-3d-rendered-wooden-decor-and-comfortable-picture-image_4236910.jpg" alt="Metal Artwork" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+  </div>
+  
+
+  
+  <!-- Content -->
+  <div class="z-10 flex flex-col justify-center items-center text-center px-4 max-w-6xl">
+    <h1 class="text-6xl md:text-7xl font-bold mb-6">
+      Transforming Wood into 
+      <span class="text-blue-400">Artistic Masterpieces</span>
+    </h1>
+    <p class="text-xl md:text-2xl mb-10 max-w-3xl">
+      Custom Wood Sculptures for Residential and Commercial Spaces 
+      that blend artistry with functionality
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a [routerLink]="['/contact']" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+        Commission Your Artwork
+      </a>
+      <a [routerLink]="['/gallery']" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:bg-white/10">
+        Explore Gallery
+      </a>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</div>
